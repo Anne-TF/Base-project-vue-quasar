@@ -42,9 +42,10 @@ const data: PokemonInterface = await pokemonRepository.getPokemons({
     }
 });
 
-const pokemons: ExtendedPokemonInterface[] = await Promise.all(data.results.map(async(pokemon, index) =>
-{
-    pokemon = await pokemonRepository.getPokemonByOrder({ queryParams: { order: index + 1 } });
-    return pokemon;
-}));
+const pokemons: ExtendedPokemonInterface[] = await Promise.all(data.results.map(
+    async(pokemon: { name: string; url: string } | ExtendedPokemonInterface, index: number) =>
+    {
+        pokemon = await pokemonRepository.getPokemonByOrder({ queryParams: { order: index + 1 } });
+        return pokemon;
+    }));
 </script>

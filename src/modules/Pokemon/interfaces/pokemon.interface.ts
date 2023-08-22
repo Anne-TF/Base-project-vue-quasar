@@ -35,6 +35,7 @@ export interface ExtendedPokemonInterface {
     stats: {
         base_stat: number;
         effort: number;
+        stat: object;
     }[];
     types: {
         slot: number;
