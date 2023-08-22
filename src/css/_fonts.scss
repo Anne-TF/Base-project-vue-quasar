@@ -1,0 +1,47 @@
+@font-face {
+  font-family: Inter-Regular;
+  src: url(../assets/fonts/Inter-Regular.ttf);
+}
+
+@font-face {
+  font-family: Inter-Medium;
+  src: url(../assets/fonts/Inter-Medium.ttf);
+}
+
+$regular: "Inter-Regular", sans-serif;
+$medium: "Inter-Medium", sans-serif;
+
+$fonts: (
+  "regular" : $regular,
+  "medium" : $medium
+);
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $medium;
+  letter-spacing: 0.010rem;
+  line-height: 45px;
+}
+
+@for $size from 2 through 100 {
+  .fs-#{$size} {
+    font-size: #{$size}px !important;
+  }
+  .lh-#{$size} {
+    line-height: #{$size}px !important;
+  }
+  .ls-#{$size} {
+    letter-spacing: #{$size}px !important;
+  }
+}
+
+@each $name, $font in $fonts {
+  .text-#{$name} {
+    font-family: $font !important;
+  }
+}
+

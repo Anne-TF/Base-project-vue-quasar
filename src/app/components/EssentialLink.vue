@@ -21,14 +21,14 @@
 
 <script setup lang="ts">
 export interface EssentialLinkProps {
-  title: string;
-  caption?: string;
-  link?: string;
-  icon?: string;
+    title: string;
+    caption?: string;
+    link?: string;
+    icon?: string;
 }
 withDefaults(defineProps<EssentialLinkProps>(), {
-  caption: '',
-  link: '#',
-  icon: '',
+    caption: '',
+    link: '#',
+    icon: ''
 });
 </script>

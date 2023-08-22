@@ -1,5 +1,5 @@
-import { store } from 'quasar/wrappers'
-import { createPinia } from 'pinia'
+import { store } from 'quasar/wrappers';
+import { createPinia } from 'pinia';
 import { Router } from 'vue-router';
 
 /*
@@ -8,9 +8,9 @@ import { Router } from 'vue-router';
  * @see https://pinia.vuejs.org/core-concepts/plugins.html#typing-new-store-properties
  */
 declare module 'pinia' {
-  export interface PiniaCustomProperties {
-    readonly router: Router;
-  }
+    export interface PiniaCustomProperties {
+        readonly router: Router;
+    }
 }
 
 /*
@@ -22,11 +22,12 @@ declare module 'pinia' {
  * with the Store instance.
  */
 
-export default store((/* { ssrContext } */) => {
-  const pinia = createPinia()
+export default store((/* { ssrContext } */) =>
+{
+    const pinia = createPinia();
 
-  // You can add Pinia plugins here
-  // pinia.use(SomePiniaPlugin)
+    // You can add Pinia plugins here
+    // pinia.use(SomePiniaPlugin)
 
-  return pinia
-})
+    return pinia;
+});

@@ -1,1 +1,35 @@
-// app global css in SCSS form
+// IMPORTS
+@import "_variables";
+@import "_fonts";
+@import "_spacing";
+
+// COLORS
+
+$colors: (
+  "primary": $bl-primary,
+  "secondary": $bl-secondary,
+  "tertiary": $bl-tertiary,
+  "danger": $bl-danger,
+  "info": $bl-info,
+  "dark": $bl-dark,
+  "tertiary--opacity": $bl-tertiary--opacity
+);
+
+// COLOR RELATED CLASSED
+@each $name, $color in $colors {
+  // classes for texts in every color
+  .text-bl-#{$name} {
+    color: $color !important;
+  }
+  // classes for backgrounds in every color
+  .bg-bl-#{$name} {
+    background-color: $color !important;
+  }
+  // classes for borders in every color
+  .border-bl-#{$name} {
+    border-left: 1px solid $color !important;
+    border-right: 1px solid $color !important;
+    border-top: 1px solid $color !important;
+    border-bottom: 1px solid $color !important;
+  }
+}
