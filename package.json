@@ -14,7 +14,12 @@
     "ts:check": "tsc -p tsconfig.build.json --noEmit",
     "prepare": "husky install",
     "pre:commit": "lint-staged",
-    "build": "quasar build"
+    "build": "quasar build",
+    "dev:android": "quasar dev -m capacitor -T android",
+    "build:android": "quasar build -m capacitor -T android",
+    "apk:key": "keytool -genkey -v -keystore bilu-key.keystore -alias bilu_key -keyalg RSA -keysize 2048 -validity 20000",
+    "apk:optimize": "$ANDROID_HOME/build-tools/30.0.2/zipalign -f -v 4 ./dist/capacitor/android/apk/release/app-release-unsigned.apk dist/capacitor/android/apk/release/bilu-app.apk",
+    "apk:release": "$ANDROID_HOME/build-tools/30.0.2/apksigner sign --ks ./bilu-key.keystore --ks-key-alias dating_key ./dist/capacitor/android/apk/release/bilu-app.apk"
   },
   "dependencies": {
     "@quasar/extras": "^1.16.4",
