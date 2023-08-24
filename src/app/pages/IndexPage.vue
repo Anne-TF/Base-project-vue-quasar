@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { Todo, Meta } from 'src/app/interfaces/models';
+import { Todo, Meta } from 'src/app/interfaces/models.interface';
 import ExampleComponent from 'src/app/components/ExampleComponent.vue';
 import { ref } from 'vue';
 
