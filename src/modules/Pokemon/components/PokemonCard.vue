@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Pokemons</h3>
+    <h3 class="text-bl-s gt-md">Pokemons</h3>
     <div class="q-gutter-y-md q-gutter-x-sm flex flex-inline justify-between">
       <q-card flat bordered class="br-8"
         :class="{

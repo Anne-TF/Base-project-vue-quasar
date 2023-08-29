@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  app:
+    ports:
+      - "9150:9150"
+      - "24678:24678"
+    volumes:
+      - .:/app:cached
